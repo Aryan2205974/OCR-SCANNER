@@ -1,0 +1,23 @@
+# Netlify configuration file
+# For more info, see: https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # Publish the frontend directory as the static site
+  publish = "frontend"
+
+[[redirects]]
+  # Redirect any requests starting with /api/ to the backend API hosted on Render.
+  # IMPORTANT: Once you deploy your backend on Render, replace 'ocr-scanner-backend.onrender.com'
+  # with your actual Render deployment host.
+  from = "/api/*"
+  to = "https://ocr-scanner-backend.onrender.com/api/:splat"
+  status = 200
+  force = true
+
+[[headers]]
+  # Set security and cache headers
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
