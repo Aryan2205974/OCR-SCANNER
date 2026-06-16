@@ -10,7 +10,7 @@
   # IMPORTANT: Once you deploy your backend on Render, replace 'ocr-scanner-backend.onrender.com'
   # with your actual Render deployment host.
   from = "/api/*"
-  to = "https://ocr-scanner-backend.onrender.com/api/:splat"
+  to = "https://ocr-scanner-o5ge.onrender.com/api/:splat"
   status = 200
   force = true
 
