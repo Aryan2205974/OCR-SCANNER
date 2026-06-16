@@ -6,6 +6,10 @@ from typing import Optional
 import uvicorn
 import os
 import io
+import sys
+
+# Ensure backend directory is in Python path for importing services and schemas
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
 
 # Import Word document generation modules
 from docx import Document
